@@ -11,12 +11,14 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake )
 message( STATUS "Searching for CMake modules in: ${CMAKE_MODULE_PATH} " )
 
 find_package( Threads REQUIRED )
+find_package( OGRE REQUIRED )
 
 add_subdirectory( Lua/src )
 
 include_directories(
     ${PROJECT_SOURCE_DIR}/LuaBridge/Source/LuaBridge
     ${Lua_INCLUDE_DIRS}
+    ${OGRE_INCLUDE_DIRS}
     )
 
 file( GLOB SRCS src/*.cpp )
@@ -31,6 +33,7 @@ add_executable( maquina
 target_link_libraries( maquina
     ${Lua_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
+    ${OGRE_LIBRARIES}
     )
 
 include( GitVersioning )
