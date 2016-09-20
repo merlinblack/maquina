@@ -39,6 +39,8 @@ int main()
 
     test( L );
 
+    luaL_dostring( L, "print( _VERSION )" );
+
     lua_close( L );
 
     return EXIT_SUCCESS;
