@@ -10,6 +10,7 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake )
 
 message( STATUS "Searching for CMake modules in: ${CMAKE_MODULE_PATH} " )
 
+find_package( Readline REQUIRED )
 find_package( Threads REQUIRED )
 find_package( OGRE REQUIRED )
 
@@ -28,7 +29,6 @@ add_executable( maquina
     ${SRCS}
     ${HDRS}
     )
-
 
 target_link_libraries( maquina
     ${Lua_LIBRARIES}
