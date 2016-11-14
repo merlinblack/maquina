@@ -28,6 +28,8 @@ void test( lua_State* L )
 
     mesh.computeNeighbours();
 
+    cout << mesh.dumpCellsToString() << endl;
+
     return;
 }
 
@@ -39,7 +41,7 @@ int main()
 
     test( L );
 
-    luaL_dostring( L, "print( _VERSION )" );
+    luaL_dostring( L, "print( _VERSION ) print( 'Selam Dünya' )" );
 
     lua_close( L );
 
