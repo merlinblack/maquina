@@ -2,6 +2,7 @@
 #define __NAVIGATIONMESH_HPP
 
 #include <vector>
+#include <string>
 #include <OgreVector3.h>
 #include "navigationcell.hpp"
 
@@ -31,6 +32,7 @@ namespace maquina
 
         // Run through each cell, and cache the neighbours
         void computeNeighbours();
+	    std::string dumpCellsToString();
 
         // Retrieve the cell that contains the given point within a tolerance of its
         // surface.
