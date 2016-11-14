@@ -41,11 +41,14 @@ namespace maquina
 
         NavigationCell& operator= ( const NavigationCell& ) = delete;
 
+        int mTag;
+
         public:
 
-        NavigationCell( Vector3 na, Vector3 nb, Vector3 nc ) :
+        NavigationCell( Vector3 na, Vector3 nb, Vector3 nc, int tag = 0 ) :
             a(na), b(nb), c(nc),
-            ab(nullptr), bc(nullptr), ca(nullptr)
+            ab(nullptr), bc(nullptr), ca(nullptr),
+            mTag(tag)
         {
             mCentre = ( a + b + c ) / 3;
         }
